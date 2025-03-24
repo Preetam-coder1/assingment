@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+// Function to calculate the area of a rectangle
+double calculateArea(double length, double width) {
+    return length * width;
+}
+
+// Function to calculate the area of a triangle
+double calculateArea(double base, double height, bool isTriangle) {
+    if (isTriangle)
+        return 0.5 * base * height;
+    return -1; // Just a safeguard, although `isTriangle` ensures it's for triangles
+}
+
+int main() {
+    double length, width, base, height;
+
+    // Rectangle calculation
+    cout << "Enter the length and width of the rectangle: ";
+    cin >> length >> width;
+    cout << "The area of the rectangle is: " << calculateArea(length, width) << endl;
+
+    // Triangle calculation
+    cout << "Enter the base and height of the triangle: ";
+    cin >> base >> height;
+    cout << "The area of the triangle is: " << calculateArea(base, height, true) << endl;
+
+    return 0;
+}
